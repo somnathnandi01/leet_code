@@ -50,4 +50,15 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        pass
+        identifier = (10**5) + 1 # this char identifies where circle start
+
+        while head != None:
+
+            if head.val == identifier:
+                return True
+            else:
+                head.val = identifier
+            
+            head = head.next
+        return False
+            
